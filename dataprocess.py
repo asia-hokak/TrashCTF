@@ -15,9 +15,12 @@ def getdata(id:int):
 def getname(id:int):
     database = sqlite3.connect("userdb.db")
     data = database.execute("select username from USER where id=?", (id,)).fetchone()
-    username = data[0]
-    database.close()
-    return username
+    try:
+        username = data[0]
+        database.close()
+        return username
+    except:    
+        return f"Error <user/{id}> is not found"
 
 def getpoint(id:int):
     data = getdata(id)
