@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html class="is-large is-secondary is-dark">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        {% include 'html/include.html' %}
+
+        <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+        <title>TOP</title>
+    </head>
+    <body>
+        <!-- navbar -->
+        {% include 'html/navbar.html' %}
+        <!-- title -->
+        <div class="ts-content is-fitted">
+            <div class="title-img ts-container">
+                <img class="title-left slideRight" src="{{ url_for('static', filename='img/trash.png') }}">
+                <img class="title-right slideLeft" src="{{ url_for('static', filename='img/CTF.png') }}">
+            </div>
+                <p class="title-main hidden" id = "title">FLAG format: Trash{.*}</p>
+        </div>
+    </body>
+</html>

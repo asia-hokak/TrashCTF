@@ -1,0 +1,53 @@
+.loginpanel {
+    bottom: 20%;
+}
+
+.nav-right {
+    float: right; 
+    margin-left: auto; 
+    margin-right: 0; 
+}
+
+.title-img{
+    left:15%;
+    top: 150px;
+}
+.title-right{
+    position: absolute;
+    left: 350px;
+    
+    height: 300px;
+}
+.title-left{
+    position: absolute;
+    left: 0px;
+    height: 370px;
+}
+.title-main{
+    text-align: center;
+    top: 400px;
+    font-size: 20px;
+}
+
+.hidden{
+    opacity: 0;
+    
+}
+
+.is-positive{
+    color: ForestGreen;
+}
+
+.square{
+    aspect-ratio: 3 / 2;
+    
+}
+
+.challenge-title{
+    top: 20%;
+}
+
+.challenge-point{
+    top: 50%;
+    left: 42%;   
+}

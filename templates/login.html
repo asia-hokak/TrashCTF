@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html class="is-large is-secondary is-dark">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+        {% include 'html/include.html' %}
+
+        <title>TOP</title>
+    </head>
+    <body>
+        <!-- navbar -->
+        {% include 'html/navbar.html' %}
+        <!-- title -->
+        
+        <div class="ts-center slideUp">
+            <div class="ts-header is-large is-heavy is-icon">
+                <div class="ts-icon is-address-card-icon is-heading"></div>
+            </div>
+            <div class="ts-segment has-top-spaced-large" style="width: 500px">
+                <div class="ts-wrap is-vertical">
+                    <div class="ts-text is-label">Username</div>
+                    <div class="ts-input is-start-icon is-underlined">
+                        <span class="ts-icon is-user-icon"></span>
+                        <input type="text" id="username">
+                    </div>
+                    <div class="ts-text is-label">Password</div>
+                    <div class="ts-input is-start-icon is-underlined">
+                        <span class="ts-icon is-lock-icon"></span>
+                        <input type="password" id="password">
+                    </div>
+                    <button class="ts-button is-fluid" onclick="login()">Login</button>
+                </div>
+            </div>
+            <span class="ts-text is-tiny is-center-aligned hidden" id="response_message" >hello</span>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+<div class="ts-content is-fitted is-secondary">
+    <div class="ts-container">
+        <div class="ts-tab">
+            <a href="/"           class="{{ 'item is-active'           if current_path == '/'           else 'item' }}">TOP</a>
+            <a href="/scoreboard" class="{{ 'item is-active'           if current_path == '/scoreboard' else 'item' }} ">Scoreboard</a>
+            <a href="/challenges" class="{{ 'item is-active'           if current_path == '/challenges' else 'item' }}">Challenges</a>
+            {% if session['id'] %}
+            <a href="{{ url_for('view_user', user_id=session['id']) }}" 
+            class="{{ 'item is-active nav-right' if current_path == url_for('view_user', user_id=session['id']) else 'item nav-right' }}">
+            {{ session['username'] }}
+            <a href="/logout"     class="item">Logout</a>
+            {% else %}
+            <a href="/login"      class="{{ 'item is-active nav-right' if current_path == '/login'      else 'item nav-right' }}">Login</a>
+            <a href="/register"   class="{{ 'item is-active'           if current_path == '/register'   else 'item' }}">Register</a>
+            {% endif %}
+        </div>
+        <div class="ts-divider"></div>
+    </div>
+</div>

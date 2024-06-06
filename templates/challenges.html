@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="is-large is-secondary is-dark">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% include 'html/include.html' %} 
+        <title></title>
+        
+    </head>
+    <body>
+        {% include 'html/navbar.html' %}
+
+
+        {% if session['id'] %}
+            {% if chal_id != -1 %}
+                {% set chal = chals[chal_id] %}
+                <script src="{{ url_for('static', filename='js/challenges_send.js') }}"></script>
+                <div class="ts-center zoomer">
+                    <div class="ts-segment is-padded" style="width: 500px">
+                        <div class="ts-text is-center-aligned is-big has-top-spaced">{{ chal['name'] }}</div>
+                        <div class="ts-text has-top-spaced-large">{{ chal['description'] }}</div>
+                       
+                        {% if chal["file"]%}
+                            {% for file in chal["file"] %}
+                            <a href="{{ url_for('static', filename='challenge/' + file['filepath']) }}" download="{{file['filename']}}" class="ts-chip has-top-spaced" style="text-decoration: none">
+                                <div class="ts-text is-tiny">
+                                    <span class="ts-icon is-file-icon is-small is-end-spaced"></span> {{file['filename']}}
+                                </div>
+                            </a>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="ts-input is-start-icon is-underlined has-top-spaced-large">
+                            <span class="ts-icon is-flag-icon"></span>
+                            <input type="text" id="FLAG" placeholder="Type your flag here">
+                        </div>
+                    </div>
+                    <span class="ts-text is-tiny is-center-aligned hidden" id="response_message" >hello</span>
+                </div>
+            {% endif %}
+            
+            
+            <div class="ts-container is-fitted">
+                <div class="ts-grid is-4-columns has-top-spaced">
+                    {% for chal in chals %}
+                    <div class="column">
+                        <a href="/challenges/{{loop.index0}}" style="text-decoration: none" class="ts-container is-fitted">
+                            <div class="ts-box square">
+                                <div class="ts-text is-big is-center-aligned challenge-title">{{ chal['name'] }}</div>
+                                <div class="ts-chip is-center-aligned challenge-point">{{ chal['point'] }}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+        {% else %}
+            <div class="ts-center">
+                <span class="ts-text is-massive is-center-aligned has-top-spaced-large slideUp">Please login first</span>
+            </div>
+        {% endif %}
+        
+        
+
+    </body>
+</html>

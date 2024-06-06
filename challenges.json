@@ -1,0 +1,45 @@
+[
+{
+    "name": "Welcome",
+    "tag" : "welcome",
+    "point" : 100,
+    "description" : "Welcome to TRASH CTF, enter the flag and you will get the point.\nThe flag: Trash{W3lc0me_7o_tr@sh_c4n}",
+    "file" : [],
+    "flag" : "Trash{W3lc0me_7o_tr@sh_c4n}"
+},
+{
+    "name": "decrypppt master",
+    "tag" : "Crypto",
+    "point" : 150,
+    "description" : "I am suck at CTF, can you help me to decrypt this message? put the plaintext into Trash{}",
+    "file" : 
+    [
+        {"filename" : "output.txt", "filepath" : "challenge2/output.txt"}
+    ],
+    "flag" : "Trash{... --- ... TFCIS WANT TO KICK ME}"
+},
+{
+    "name": "No one can break me",
+    "tag" : "Crypto",
+    "point" : 300,
+    "description" : "You can't decrypt my message forevereverever",
+    "file" : 
+    [
+        {"filename" : "enc.py", "filepath" : "challenge3/enc.py"},
+        {"filename" : "output.txt", "filepath" : "challenge3/output.txt"}
+    ],
+    "flag" : "Trash{st0p_D01n9_bRu73_7orce}"
+},
+{
+    "name": "Baby RSA",
+    "tag" : "Crypto",
+    "point" : 300,
+    "description" : "my grandmother can",
+    "file" : 
+    [
+        {"filename" : "enc.py", "filepath" : "challenge4/enc.py"},
+        {"filename" : "output.txt", "filepath" : "challenge4/output.txt"}
+    ],
+    "flag" : "Trash{s33Ms_y0u_@re_900d_4t_math}"
+}
+]

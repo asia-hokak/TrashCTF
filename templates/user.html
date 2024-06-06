@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="is-large is-secondary is-dark"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% include 'html/include.html' %} 
+        <title></title>
+    </head>
+    <body>
+        {% include 'html/navbar.html' %}
+        
+        <div class="ts-center">
+            <div class="ts-header is-huge is-center-aligned is-middle-aligned is-heavy slideLeft">{{ user }}</div>
+            {% if rank %}
+            <div class="ts-header is-center-aligned has-top-spaced slideLeft">#{{ rank }}</div>
+            {% endif %}
+        </div>
+        <div class="ts-container is-narrow has-vertically-padded-big">
+            <table class="ts-table is-striped is-relaxed has-top-spaced-large">
+                <thead>
+                    <tr>
+                        <th>category</th>
+                        <th>solved</th>
+                        <th>point</th>
+                    </tr>
+                </thead>
+                {% if rank %}
+                <tbody>
+                    {% for solved in solved_list %}
+                        {% set chal = chals[solved] %}
+                        <tr>
+                            <td>{{ chal["tag"] }}</td>
+                            <td><a href = "{{ url_for('view_challenges_id', chal_id=solved) }}" style="text-decoration: none">{{ chal["name"] }}</a></td>
+                            <td>{{ chal["point"] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                {% else %}
+                <tbody>
+                    
+                    <tr>
+                        <td></td>
+                        <td>no challenge solved yet.</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+                {% endif %}
+            
+            </table>
+        </div>
+    </body>
+</html>
