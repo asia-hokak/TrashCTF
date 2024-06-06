@@ -50,9 +50,9 @@ def view_register():
 def view_user(user_id:int):
     check_data()
     return render_template('user.html', current_path = request.path, 
-                           chals= chals, 
-                           user = getname(user_id), 
-                           rank = getrank(user_id),
+                            chals= chals, 
+                            user = getname(user_id), 
+                            rank = getrank(user_id),
                             point = getpoint(user_id), 
                             solved_list = getsolve(user_id))
 
