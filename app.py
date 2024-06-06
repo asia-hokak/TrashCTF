@@ -134,14 +134,14 @@ def check_data():
     session.update()
 
 def run_server():
-    server = pywsgi.WSGIServer(('0.0.0.0', 5555), app)
+    server = pywsgi.WSGIServer(('0.0.0.0', 80), app)
     print('server started at')
-    print('http://127.0.0.1:5555')
+    print('http://127.0.0.1:80')
     server.serve_forever()
 
 def run_server_debug():
-    app.run('0.0.0.0', 4444)
+    app.run('0.0.0.0', 80)
 
 if __name__ == '__main__':
-    run_server_debug()
+    run_server()
     

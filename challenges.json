@@ -11,7 +11,7 @@
     "name": "decrypppt master",
     "tag" : "Crypto",
     "point" : 150,
-    "description" : "I am suck at CTF, can you help me to decrypt this message? put the plaintext into Trash{}",
+    "description" : "I suck at CTF, can you help me decrypt the message? put the plaintext into Trash{}",
     "file" : 
     [
         {"filename" : "output.txt", "filepath" : "challenge2/output.txt"}
