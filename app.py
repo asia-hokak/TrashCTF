@@ -13,7 +13,7 @@ app = Flask(__name__, static_folder='static')
 app.secret_key = os.urandom(16)
 app.permanent_session_lifetime = timedelta(days=7)
 
-challenges_file = open('challenges.json', 'r')
+challenges_file = open('challenges.json', 'rb')
 chals = json.load(challenges_file)
 
 @app.route('/')
